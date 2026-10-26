@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mundo dos Desenhos</title>
+<style>
+:root {
+  --site-primary:#6c4be8;
+  --site-secondary:#ffcf55;
+  --site-background:#fff8ed;
+  --site-on-primary:#ffffff;
+  --site-on-secondary:#332600;
+  --site-on-background:#29213b;
+  --site-font-body:Arial, sans-serif;
+  --site-font-heading:Trebuchet MS, Arial, sans-serif;
+  --site-heading-scale:1;
+  --site-spacing-scale:1;
+  --site-radius-scale:1;
+  --site-decoration-opacity:1;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:var(--site-font-body);background:light-dark(var(--site-background),#171326);color:light-dark(var(--site-on-background),#f5efff)}
+.app{min-height:100vh;background-color:var(--site-background);background:light-dark(var(--site-background),#171326);border-radius:0;overflow:hidden}
+header{background:var(--site-primary);color:var(--site-on-primary);padding:18px clamp(16px,5vw,64px);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.brand{font-family:var(--site-font-heading);font-size:calc(1.6rem * var(--site-heading-scale));font-weight:900;letter-spacing:-1px}
+nav{display:flex;gap:10px;flex-wrap:wrap}nav a{color:white;text-decoration:none;font-weight:700;padding:9px 13px;border-radius:999px}nav a:hover{background:#ffffff25}
+.hero{padding:clamp(28px,6vw,70px) clamp(16px,5vw,64px);display:grid;grid-template-columns:1.15fr .85fr;gap:30px;align-items:center;background:linear-gradient(135deg,#fff1cc,#f2eaff 65%,#e5f8ff)}
+.hero h1{font-family:var(--site-font-heading);font-size:calc(clamp(2.2rem,6vw,4.8rem)*var(--site-heading-scale));line-height:1.02;margin:0 0 16px;color:#33215e;letter-spacing:-2px}
+.hero p{font-size:1.1rem;line-height:1.65;color:#51466b;max-width:580px}
+.btn{display:inline-block;border:0;border-radius:999px;padding:13px 20px;font-weight:800;text-decoration:none;cursor:pointer;margin:8px 8px 0 0;background:var(--site-primary);color:white;box-shadow:0 5px 0 #4b32a6}
+.btn.alt{background:var(--site-secondary);color:var(--site-on-secondary);box-shadow:0 5px 0 #d4a52e}
+.hero-art{min-height:240px;display:grid;place-items:center;font-size:clamp(6rem,18vw,12rem);filter:drop-shadow(0 15px 12px #33215e20);position:relative}
+.bubble{position:absolute;background:#fff;border-radius:50%;width:70px;height:70px;display:grid;place-items:center;font-size:2rem;box-shadow:0 8px 24px #33215e18}.bubble.one{top:8%;left:8%}.bubble.two{right:2%;bottom:8%;background:#ffe08a}
+section{padding:38px clamp(16px,5vw,64px)}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:20px}.section-head h2{font-family:var(--site-font-heading);font-size:calc(1.8rem*var(--site-heading-scale));margin:0;color:light-dark(#33215e,#e9ddff)}.section-head p{margin:0;color:light-dark(#756b89,#bcb2d2)}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.card{background:light-dark(#fff,#241d35);border:1px solid light-dark(#eee7fa,#39304d);border-radius:calc(22px*var(--site-radius-scale));overflow:hidden;box-shadow:0 8px 25px #38225e0b;transition:transform .2s}.card:hover{transform:translateY(-4px)}
+.thumb{height:155px;display:grid;place-items:center;font-size:5rem;background:linear-gradient(135deg,#e9dcff,#ffedbd)}.card:nth-child(2) .thumb{background:linear-gradient(135deg,#d5f6ff,#dfffcf)}.card:nth-child(3) .thumb{background:linear-gradient(135deg,#ffe0e8,#e7e0ff)}
+.card-body{padding:17px}.card h3{margin:0 0 7px;font-size:1.15rem}.card p{margin:0 0 14px;color:light-dark(#756b89,#bcb2d2);line-height:1.5}.watch{border:0;background:var(--site-secondary);color:var(--site-on-secondary);font-weight:800;padding:10px 15px;border-radius:999px;cursor:pointer}
+.activities{background:light-dark(#f0eaff,#1d172d);display:grid;grid-template-columns:1fr 1fr;gap:18px}.activity{padding:22px;border-radius:calc(20px*var(--site-radius-scale));background:light-dark(#fff,#29213b)}.activity h3{margin-top:0}.activity button{font:inherit}
+footer{padding:24px clamp(16px,5vw,64px);background:var(--site-primary);color:white;text-align:center;font-weight:600}
+#notice{margin:16px 0 0;font-weight:700;color:#4b32a6;min-height:1.4em}
+@media(max-width:720px){.hero{grid-template-columns:1fr;text-align:center}.hero p{margin-inline:auto}.hero-art{min-height:190px}.cards{grid-template-columns:1fr}.activities{grid-template-columns:1fr}header{justify-content:center;text-align:center}}
+</style>
+</head>
+<body>
+<div class="app">
+<header><div class="brand">🌈 Mundo dos Desenhos</div><nav><a href="#inicio">Início</a><a href="#desenhos">Desenhos</a><a href="#diversao">Diversão</a></nav></header>
+<main>
+<section class="hero" id="inicio"><div><h1>Um mundo cheio de<br>imaginação!</h1><p>Descobre personagens divertidos, histórias coloridas e atividades para aprender brincando. Escolhe o que queres explorar hoje!</p><a class="btn" href="#desenhos">Ver desenhos</a><a class="btn alt" href="#diversao">Brincar agora</a></div><div class="hero-art" aria-label="Ilustração de personagens"><span>🦊</span><span class="bubble one">⭐</span><span class="bubble two">🎈</span></div></section>
+<section id="desenhos"><div class="section-head"><h2>Desenhos para descobrir</h2><p>Escolhe uma aventura!</p></div><div class="cards">
+<article class="card"><div class="thumb">🐼</div><div class="card-body"><h3>Amigos da Floresta</h3><p>Animais curiosos vivem aventuras e aprendem a cuidar uns dos outros.</p><button class="watch" onclick="showMessage('Amigos da Floresta: em breve teremos episódios!')">Conhecer</button></div></article>
+<article class="card"><div class="thumb">🚀</div><div class="card-body"><h3>Viagem ao Espaço</h3><p>Explora planetas, estrelas e mistérios com uma equipa corajosa.</p><button class="watch" onclick="showMessage('Viagem ao Espaço: prepara-te para uma aventura!')">Conhecer</button></div></article>
+<article class="card"><div class="thumb">🧜‍♀️</div><div class="card-body"><h3>O Reino do Mar</h3><p>Descobre um oceano mágico cheio de música e criaturas amigas.</p><button class="watch" onclick="showMessage('O Reino do Mar: mergulho mágico em breve!')">Conhecer</button></div></article>
+</div><p id="notice" aria-live="polite"></p></section>
+<section class="activities" id="diversao"><div class="activity"><h3>🎨 Hora de desenhar</h3><p>Que personagem gostarias de desenhar hoje?</p><button class="watch" onclick="showMessage('Pega nos lápis e desenha o teu personagem favorito!')">Começar</button></div><div class="activity"><h3>🧠 Desafio divertido</h3><p>Qual destes animais gosta de viver na floresta?</p><button class="watch" onclick="showMessage('🐼 O panda! Muito bem, continua a aprender!')">Responder: Panda</button></div></section>
+</main><footer>Feito com carinho para pequenos exploradores ✨</footer></div>
+<script>
+function showMessage(message){document.getElementById('notice').textContent=message;document.getElementById('notice').scrollIntoView({behavior:'smooth',block:'nearest'});}
+</script>
+</body>
+</html>
